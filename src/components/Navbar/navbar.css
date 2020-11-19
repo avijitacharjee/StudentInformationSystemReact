@@ -1,0 +1,27 @@
+.row {
+    flex-grow: 2;
+}
+.grow {
+    flex-grow: 0;
+}
+.container {
+    width : 100%;
+    margin: auto;
+}
+.buttonFontSize {
+    font-size: 18px;
+    color: #a1a1a1;
+}
+.AppBar {
+    background-size: cover;
+}
+.avatar {
+    justify-content: left;
+}
+.main-logo {
+    justify-content: left;
+}
+.loginButton {
+    background-color: #263238;
+    color: #ffffff;
+}
