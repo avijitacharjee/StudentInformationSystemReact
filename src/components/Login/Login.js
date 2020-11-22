@@ -16,9 +16,7 @@ import Navbar from './../Navbar/Navbar'
 class Login extends React.Component{
     render() {
         return (
-            
             <div className="body">
-                <Navbar></Navbar>
                 <div className="paper">
                     <Paper elevation={16}>
                     <form className="form" noValidate>

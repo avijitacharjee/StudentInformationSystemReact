@@ -1,59 +1,93 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import { withStyles } from '@material-ui/core/styles';
+import React, { useState, useEffect } from 'react';
+import { Button } from './Button';
+import { Link } from 'react-router-dom';
+import './Navbar.css';
+import { MdFingerprint } from 'react-icons/md';
+import { FaBars, FaTimes } from 'react-icons/fa';
+import { IconContext } from 'react-icons/lib';
 
-import { Grid, Button, AppBar, Toolbar, Typography, MenuItem, Menu, Avatar} from "@material-ui/core"
+function Navbar() {
+  const [click, setClick] = useState(false);
+  const [button, setButton] = useState(true);
 
-import "./navbar.css";
+  const handleClick = () => setClick(!click);
+  const closeMobileMenu = () => setClick(false);
 
-class Navbar extends React.Component {
-    state={
-        anchorEl:null
-      };
-    render() {
-        const {anchorEl } = this.state;
-        const open = Boolean(anchorEl);
-        return (
-            <div className="root">
-                <AppBar position="static" color="default" className="AppBar">
-                <Grid item sm={12} xs={12} className="container">
-                    <Toolbar>
-                        <Grid className="grow">
-                            <Button className="main-logo">
-                                <Avatar src="https://puc.ac.bd/Content/assets/Image/puc.png" className="avatar" />
-                            </Button>
-                        </Grid>
-                        <Button color="inherit" onClick={this.handleMenu} className="buttonFontSize">Discover</Button>
-                        <Menu
-                            id="menu-appbar"
-                            anchorEl={this.state.anchorEl}
-                            anchorOrigin={{
-                                vertical: 'top',
-                                horizontal: 'right',
-                            }}
-                            transformOrigin={{
-                            vertical: 'top',
-                            horizontal: 'right',
-                                }}
-                            open={open}
-                            onClose={this.handleClose}
-                        >
-                            <MenuItem onClick={this.handleClose}>Teacher</MenuItem>
-                            <MenuItem onClick={this.handleClose}>Student</MenuItem>
-                            <MenuItem onClick={this.handleClose}>Advisor</MenuItem>
-                            <MenuItem onClick={this.handleClose}>CR</MenuItem>
-                        </Menu>
-                        <Button color="inherit" className="buttonFontSize">Teacher</Button>
-                        <Button color="inherit" className="buttonFontSize">Student</Button>
-                        <Button color="inherit" className="buttonFontSize">Advisor</Button>
-                        <Button color="inherit" className="buttonFontSize">CR</Button>
-                        <Button color="inherit" className="buttonFontSize">Profile</Button>
-                        <Button variant="contained" color="primary" className="loginButton">Login</Button>
-                    </Toolbar>
-                </Grid>
-                </AppBar>
-            </div>    
-        )
+  const showButton = () => {
+    if (window.innerWidth <= 960) {
+      setButton(false);
+    } else {
+      setButton(true);
     }
+  };
+
+  useEffect(() => {
+    showButton();
+    window.addEventListener('resize', showButton);
+    return window.removeEventListener('resize', showButton)
+    
+  }, []);
+
+
+  return (
+    <>
+      <IconContext.Provider value={{ color: '#fff' }}>
+        <nav className='navbar'>
+          <div className='navbar-container container'>
+            <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
+              <MdFingerprint className='navbar-icon' />
+              LAVISH
+            </Link>
+            <div className='menu-icon' onClick={handleClick}>
+              {click ? <FaTimes /> : <FaBars />}
+            </div>
+            <ul className={click ? 'nav-menu active' : 'nav-menu'}>
+              <li className='nav-item'>
+                <Link to='/' className='nav-links' onClick={closeMobileMenu}>
+                  Home
+                </Link>
+              </li>
+              <li className='nav-item'>
+                <Link
+                  to='/services'
+                  className='nav-links'
+                  onClick={closeMobileMenu}
+                >
+                  Services
+                </Link>
+              </li>
+              <li className='nav-item'>
+                <Link
+                  to='/products'
+                  className='nav-links'
+                  onClick={closeMobileMenu}
+                >
+                  Products
+                </Link>
+              </li>
+              <li className='nav-btn'>
+                {button ? (
+                  <Link to='/sign-up' className='btn-link'>
+                    <Button buttonStyle='btn--outline'>SIGN UP</Button>
+                  </Link>
+                ) : (
+                  <Link to='/sign-up' className='btn-link'>
+                    <Button
+                      buttonStyle='btn--outline'
+                      buttonSize='btn--mobile'
+                      onClick={closeMobileMenu}
+                    >
+                      SIGN UP
+                    </Button>
+                  </Link>
+                )}
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </IconContext.Provider>
+    </>
+  );
 }
+
 export default Navbar;
