@@ -35,8 +35,9 @@ function Navbar() {
         <nav className='navbar'>
           <div className='navbar-container container'>
             <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
-              <MdFingerprint className='navbar-icon' />
-              LAVISH
+              {/* <MdFingerprint className='navbar-icon' /> */}
+              <img src="https://puc.ac.bd/Content/assets/Image/puc.png" className="navbar-icon"/>
+              Student Information System
             </Link>
             <div className='menu-icon' onClick={handleClick}>
               {click ? <FaTimes /> : <FaBars />}
@@ -53,7 +54,7 @@ function Navbar() {
                   className='nav-links'
                   onClick={closeMobileMenu}
                 >
-                  Services
+                  Faculty
                 </Link>
               </li>
               <li className='nav-item'>
@@ -62,7 +63,7 @@ function Navbar() {
                   className='nav-links'
                   onClick={closeMobileMenu}
                 >
-                  Products
+                  Contact
                 </Link>
               </li>
               <li className='nav-btn'>

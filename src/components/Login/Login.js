@@ -30,6 +30,7 @@ class Login extends React.Component{
                                     fullWidth
                                     id="firstName"
                                     label="First Name"
+                                    className="textfield"
                                     autoFocus
                                 />
                             </Grid>

@@ -6,8 +6,8 @@ import Navbar from './components/Navbar/Navbar';
 class App extends React.Component {
   render() {
     return (
-      <Router>
-        <Navbar />
+      <Router className="App">
+        <Navbar/>
         <Switch>
           <Route path='/' exact component={Login} />
           {/* <Route path='/services' component={Services} />
