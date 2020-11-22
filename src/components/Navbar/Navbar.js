@@ -28,7 +28,6 @@ function Navbar() {
     
   }, []);
 
-
   return (
     <>
       <IconContext.Provider value={{ color: '#fff' }}>
