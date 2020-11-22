@@ -1,0 +1,21 @@
+.paper {
+    width: 40%;
+    margin: auto;
+    padding-top: 100px;
+    background-color: #cfd8dc;
+}
+.form {
+    padding : 20px;
+}
+.body {
+    background-color: #cfd8dc;
+}
+.textfield {
+    border-color: #1c2237;
+}
+.submit {
+    background-color: #1c2237;
+}
+.body {
+    background-color: #cfd8dc;
+}

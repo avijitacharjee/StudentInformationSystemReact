@@ -3,6 +3,8 @@ import React from 'react';
 import Login from './components/Login/Login'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
+import Register from './components/Register/Register';
+import Post from './components/post/Post';
 class App extends React.Component {
   render() {
     return (
@@ -10,9 +12,8 @@ class App extends React.Component {
         <Navbar/>
         <Switch>
           <Route path='/' exact component={Login} />
-          {/* <Route path='/services' component={Services} />
-          <Route path='/products' component={Products} />
-          <Route path='/sign-up' component={SignUp} /> */}
+          <Route path='/register' component={Register} />
+          <Route path='/post' component={Post} />
         </Switch>
         {/* <Footer /> */}
       </Router>
