@@ -5,6 +5,7 @@ import './Navbar.css';
 import { MdFingerprint } from 'react-icons/md';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { IconContext } from 'react-icons/lib';
+import { Paper } from '@material-ui/core';
 
 function Navbar() {
   const [click, setClick] = useState(false);
@@ -30,8 +31,10 @@ function Navbar() {
 
   return (
     <>
+      
       <IconContext.Provider value={{ color: '#fff' }}>
         <nav className='navbar'>
+        
           <div className='navbar-container container'>
             <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
               {/* <MdFingerprint className='navbar-icon' /> */}
@@ -84,7 +87,8 @@ function Navbar() {
               </li>
             </ul>
           </div>
-        </nav>
+          </nav>
+          
       </IconContext.Provider>
     </>
   );

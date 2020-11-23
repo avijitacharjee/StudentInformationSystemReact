@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
 import Register from './components/Register/Register';
 import Post from './components/post/Post';
+import Footer from './components/Footer/Footer';
 class App extends React.Component {
   render() {
     return (
@@ -15,7 +16,7 @@ class App extends React.Component {
           <Route path='/register' component={Register} />
           <Route path='/post' component={Post} />
         </Switch>
-        {/* <Footer /> */}
+        <Footer />
       </Router>
     );
   }
