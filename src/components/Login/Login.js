@@ -12,12 +12,13 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import './login.css'
-import { axios } from 'axios';
+import axios from 'axios';
 class Login extends React.Component{
     state = {
         email: '',
         password: ''
     };
+    
     handleEmailChange = (e)=> {
         this.setState({
             email : e.target.value
@@ -25,7 +26,20 @@ class Login extends React.Component{
         console.log(this.state.email);
     }
     onSubmit = (e) => {
-        console.log(this.state.email + "\n"+ this.state.password);
+        console.log(this.state.email + "\n" + this.state.password);
+        let formData = new FormData();
+        formData.append('email',this.state.email);
+        formData.append('password',this.state.password); 
+        axios.post("http://127.0.0.1:8000/api/login", formData).then(
+            response=> {
+                console.log(response);
+                console.log(response.data.data.user.user_type);
+                this.props.history.push('post');
+            }
+        ).catch(error=> {
+            console.log(error.message);
+            
+        });
     }
     render() {
         return (

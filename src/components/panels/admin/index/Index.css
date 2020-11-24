@@ -1,0 +1,24 @@
+.cards {
+    height: 150px;
+    /* text-align: center;
+    vertical-align: middle;
+    line-height: 150px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    background-color: white;
+    color:#000a12;
+    font-weight: bolder;
+    padding: 10px;
+}
+.text {
+    text-decoration: none;
+    color:antiquewhite;
+}
+.link {
+    text-decoration: none;
+}
+.box {
+    width: 90%;
+}
