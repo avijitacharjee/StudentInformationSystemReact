@@ -44,7 +44,7 @@ export default class AdminIndex extends React.Component {
                                 <Link to='' style={{ textDecoration: 'none' }}>
                                     <Paper elevation="16">
                                         <div className="cards">
-                                            View Teachers
+                                            Teachers List
                                         </div>
                                     </Paper>
                                 </Link>

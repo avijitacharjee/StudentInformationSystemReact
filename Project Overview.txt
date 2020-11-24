@@ -6,7 +6,7 @@ Pages:
 Admin:
     1)index
     2)Add teacher
-    3)Approve student
+    3)Student requests
     4)Create notes(for all/student/teacher)
     5)View students
     6)View Teachers

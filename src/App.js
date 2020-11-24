@@ -8,6 +8,7 @@ import Post from './components/post/Post';
 import Footer from './components/Footer/Footer';
 import AdminIndex from './components/panels/admin/index/AdminIndex';
 import AddTeacher from './components/panels/admin/addTeacher/AddTeacher';
+import TeacherCrud from './components/panels/admin/teacherCrud/TeacherCrud';
 class App extends React.Component {
   render() {
     return (
@@ -18,7 +19,8 @@ class App extends React.Component {
           <Route path='/register' component={Register} />
           <Route path='/post' component={Post} />
           <Route path='/admin/index' component={AdminIndex} />
-          <Route path='/admin/add-teacher' component={AddTeacher}/>
+          <Route path='/admin/add-teacher' component={AddTeacher} />
+          <Route path='/admin/teachers' component={TeacherCrud}/>
         </Switch>
         <Footer />
       </Router>
