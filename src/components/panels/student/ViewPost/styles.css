@@ -1,0 +1,9 @@
+.row {
+    width: 90%;
+    margin: 20px;
+    align-items: flex-start;
+    padding : 30px;
+}
+.body {
+    padding: 30px;
+}

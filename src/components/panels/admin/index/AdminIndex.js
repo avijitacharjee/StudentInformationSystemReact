@@ -10,7 +10,7 @@ export default class AdminIndex extends React.Component {
                     <form className="form" noValidate>
                         <Grid container spacing={4} className="box">
                             <Grid item xs={12} sm={4}>
-                                <Link to='' style={{ textDecoration: 'none' }}>
+                                <Link to='/admin/teacher/add' style={{ textDecoration: 'none' }}>
                                     <Paper elevation="16">
                                         <div className="cards">
                                             Add Teacher
@@ -29,7 +29,7 @@ export default class AdminIndex extends React.Component {
                                 </Link>
                             </Grid>
                             <Grid item xs={12} sm={4}>
-                                <Link to=''style={{ textDecoration: 'none' }}>
+                                <Link to='/admin/students'style={{ textDecoration: 'none' }}>
                                     <Paper elevation="16">
                                         <div className="cards">
                                             View students
@@ -41,7 +41,7 @@ export default class AdminIndex extends React.Component {
                         </Grid>
                         <Grid container spacing={4} className="box">
                             <Grid item xs={12} sm={4}>
-                                <Link to='' style={{ textDecoration: 'none' }}>
+                                <Link to='/admin/teachers' style={{ textDecoration: 'none' }}>
                                     <Paper elevation="16">
                                         <div className="cards">
                                             Teachers List

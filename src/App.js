@@ -9,6 +9,10 @@ import Footer from './components/Footer/Footer';
 import AdminIndex from './components/panels/admin/index/AdminIndex';
 import AddTeacher from './components/panels/admin/addTeacher/AddTeacher';
 import TeacherCrud from './components/panels/admin/teacherCrud/TeacherCrud';
+import TeacherUpdate from './components/panels/admin/teacherCrud/TeacherUpdate';
+import TeacherCreatePost from './components/panels/teacher/CreatePost/TeacherCreatePost'
+//Students
+import StudentViewAllPost from './components/panels/student/ViewPost/StudentVeiwAllPost'
 class App extends React.Component {
   render() {
     return (
@@ -19,8 +23,11 @@ class App extends React.Component {
           <Route path='/register' component={Register} />
           <Route path='/post' component={Post} />
           <Route path='/admin/index' component={AdminIndex} />
-          <Route path='/admin/add-teacher' component={AddTeacher} />
-          <Route path='/admin/teachers' component={TeacherCrud}/>
+          <Route path='/admin/teacher/add' component={AddTeacher} />
+          <Route path='/admin/teachers' component={TeacherCrud} />
+          <Route exact path='/admin/teacher/update/:id' component={TeacherUpdate} />
+          <Route path='/teacher/post' component={TeacherCreatePost} />
+          <Route path='/student/posts' component={StudentViewAllPost}/>
         </Switch>
         <Footer />
       </Router>

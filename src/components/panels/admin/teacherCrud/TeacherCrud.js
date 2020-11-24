@@ -74,6 +74,9 @@ class TeacherCrud extends React.Component {
                     
                 });
             }
+            const handleUpdate = (id)=>{
+                this.props.history.push('teacher/update/'+id);
+            }
             return (
                 <div class="table-page">
                     <Paper elevation ="16">
@@ -84,7 +87,7 @@ class TeacherCrud extends React.Component {
                                 <td>Name</td>
                                 <td>Department</td>
                                 <td>Email</td>
-                                <td></td>
+                                {/* <td></td> */}
                                 <td></td>
                             </tr>
                             </thead>
@@ -97,7 +100,7 @@ class TeacherCrud extends React.Component {
                                         <td>{ droplet.id }</td>
                                         <td>{droplet.department}</td>
                                         <td>{droplet.user.email}</td>
-                                        <td> <Button variant="contained" color="primary"> Update </Button> </td>
+                                        {/* <td> <Button variant="contained" color="primary" onClick={()=>handleUpdate(droplet.id)}> Update </Button> </td> */}
                                         <td> <Button variant="contained" color="secondary" onClick={()=>handleOpen(droplet.id)}> Delete</Button></td>
                                     </tr>
                                     

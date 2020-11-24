@@ -34,7 +34,7 @@ class Login extends React.Component{
             response=> {
                 console.log(response);
                 console.log(response.data.data.user.user_type);
-                this.props.history.push('post');
+                this.props.history.push('admin/index');
             }
         ).catch(error=> {
             console.log(error.message);
