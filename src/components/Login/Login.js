@@ -12,8 +12,21 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import './login.css'
-import Navbar from './../Navbar/Navbar'
+import { axios } from 'axios';
 class Login extends React.Component{
+    state = {
+        email: '',
+        password: ''
+    };
+    handleEmailChange = (e)=> {
+        this.setState({
+            email : e.target.value
+        })
+        console.log(this.state.email);
+    }
+    onSubmit = (e) => {
+        console.log(this.state.email + "\n"+ this.state.password);
+    }
     render() {
         return (
             <div className="body">
@@ -30,6 +43,7 @@ class Login extends React.Component{
                                     label="Email Address"
                                     name="email"
                                     autoComplete="email"
+                                    onChange={this.handleEmailChange}
                                 />
                             </Grid>
                             <Grid item xs={12}>
@@ -42,16 +56,22 @@ class Login extends React.Component{
                                     type="password"
                                     id="password"
                                     autoComplete="current-password"
+                                    onChange={(e) => {
+                                        this.setState({
+                                        password : e.target.value 
+                                    });
+                                    }}
                                 />
                             </Grid>
                             
                         </Grid>
                         <Button
-                            type="submit"
+                            type="button"
                             fullWidth
                             variant="contained"
                             color="primary"
                             className="submit"
+                            onClick={this.onSubmit}
                         >
                             Sign in
                         </Button>
