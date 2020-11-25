@@ -1,7 +1,7 @@
 import { Button, Paper, Table } from '@material-ui/core';
 import React from 'react';
 import axios from 'axios';
-import './StudentCrud.css';
+import './styles.css';
 import { makeStyles } from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
 import Backdrop from '@material-ui/core/Backdrop';
@@ -20,13 +20,13 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
   
-class StudentCrud extends React.Component {
+class TeacherCrud extends React.Component {
     state = {
         response: null
     }
     componentDidMount() {
         let _this = this;
-        axios.get("http://127.0.0.1:8000/api/students").then(
+        axios.get("http://127.0.0.1:8000/api/courses").then(
             _response=> {
                 _this.setState({
                     response : _response
@@ -83,10 +83,10 @@ class StudentCrud extends React.Component {
                         <table className="table">
                             <thead className="t-header">
                             <tr>
-                                <td>Image</td>
                                 <td>Name</td>
-                                <td>Department</td>
+                                <td>Course Code</td>
                                 <td>Semester</td>
+                                <td>Credit</td>
                                 {/* <td></td> */}
                                 <td></td>
                             </tr>
@@ -96,10 +96,10 @@ class StudentCrud extends React.Component {
                              (droplets.length > 0) ? droplets.map( (droplet, index) => {
                                 return (
                                     <tr key={index}>
-                                        <td><img src={ droplet.user.picture_path } width="60" height="50"/></td>
                                         <td>{ droplet.name }</td>
-                                        <td>{droplet.department}</td>
+                                        <td>{ droplet.course_code }</td>
                                         <td>{droplet.semester}</td>
+                                        <td>{droplet.credit}</td>
                                         {/* <td> <Button variant="contained" color="primary" onClick={()=>handleUpdate(droplet.id)}> Update </Button> </td> */}
                                         <td> <Button variant="contained" color="secondary" onClick={()=>handleOpen(droplet.id)}> Delete</Button></td>
                                     </tr>
@@ -147,4 +147,4 @@ class StudentCrud extends React.Component {
     }
 }
 
-export default StudentCrud;
+export default TeacherCrud;
