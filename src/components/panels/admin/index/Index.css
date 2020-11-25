@@ -28,3 +28,10 @@
 .body {
     background-color: #00000000;
 }
+.btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 50px;
+}

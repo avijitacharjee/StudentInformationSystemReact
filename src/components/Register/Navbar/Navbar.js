@@ -70,17 +70,17 @@ function Navbar() {
               </li>
               <li className='nav-btn'>
                 {button ? (
-                  <Link to='/register' className='btn-link'>
-                    <Button buttonStyle='btn--outline'>Sign up</Button>
+                  <Link to='/' className='btn-link'>
+                    <Button buttonStyle='btn--outline'>SIGN IN</Button>
                   </Link>
                 ) : (
-                  <Link to='/register' className='btn-link'>
+                  <Link to='/' className='btn-link'>
                     <Button
                       buttonStyle='btn--outline'
                       buttonSize='btn--mobile'
                       onClick={closeMobileMenu}
                     >
-                      Sign up
+                      SIGN IN
                     </Button>
                   </Link>
                 )}

@@ -13,6 +13,7 @@ import TextField from '@material-ui/core/TextField';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import './login.css'
 import axios from 'axios';
+import Navbar from '../Navbar/Navbar';
 class Login extends React.Component{
     state = {
         email: '',
@@ -34,7 +35,10 @@ class Login extends React.Component{
             response=> {
                 console.log(response);
                 console.log(response.data.data.user.user_type);
-                this.props.history.push('admin/index');
+                if (response.data.data.user.user_type === 'admin') {
+                    this.props.history.push('admin/index');
+                }
+                
             }
         ).catch(error=> {
             console.log(error.message);
@@ -43,6 +47,9 @@ class Login extends React.Component{
     }
     render() {
         return (
+            <div>
+             
+            <Navbar/>
             <div className="body">
                 <div className="paper">
                     <Paper elevation={16}>
@@ -99,6 +106,8 @@ class Login extends React.Component{
                         </form>
                     </Paper>
                 </div>
+                </div>
+                   
             </div>
         )
     }

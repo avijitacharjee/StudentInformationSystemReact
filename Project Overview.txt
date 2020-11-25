@@ -9,27 +9,30 @@ Admin:
     4)Create notes(for all/student/teacher) *
     5)View students *
     6)View Teachers *
-    7)Seen by (for posts ) 
-    8)Approve update teacher profile
-    9)Approve update teacher courses
+    7)Seen by (for posts ) (x)
+    8)Approve update teacher profile (x)
+    9)Approve update teacher courses (x)
+    10)Create post by admin
 Teacher:
     1)Create post (all/students/teachers) *
-    2)Seen by ( For posts ) 
+    2)Seen by ( For posts ) (x)
     3)View post *
-    4)Update courses (Need to be approved by admin)
+    4)Update courses (Need to be approved by admin) (x)
     5)Update profile( '' )
     6)Courses *
     7)View enrolled student 
 Advisor:
     1)View students *
-    2)View enroll requests
+    2)View enroll requests (p)
     3)Index *
 Student
     1)Index ( View all post ) *
-    2)Enrollment
+    2)Enrollment *
     3)Profile(with update) *
     4)Create post *
 CR:
     1)Index(View all post ) *
-    2)Approve post request
+    2)Approve post request 
     3)Create post(batch/course) *
+
+( How many members enrolled in a course )

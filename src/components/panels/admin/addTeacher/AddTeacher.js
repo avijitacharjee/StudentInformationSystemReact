@@ -13,6 +13,7 @@ import TextField from '@material-ui/core/TextField';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import './AddTeacher.css'
 import axios from 'axios';
+import Navbar from '../Navbar/Navbar';
 class AddTeacher extends React.Component{
     state = {
         'name': '',
@@ -45,7 +46,9 @@ class AddTeacher extends React.Component{
     }
     render() {
         return (
-            <div className="body">
+            <div>
+                <Navbar/>
+                <div className="body">
                 <div className="paper">
                     <Paper elevation={16}>
                     <form className="form" noValidate>
@@ -196,6 +199,8 @@ class AddTeacher extends React.Component{
                     </Paper>
                 </div>
             </div>
+            </div>
+            
         )
     }
 }

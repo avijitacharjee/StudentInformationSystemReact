@@ -1,4 +1,4 @@
-import { Button, CircularProgress, Paper, Table } from '@material-ui/core';
+import { Button, Paper, Table } from '@material-ui/core';
 import React from 'react';
 import axios from 'axios';
 import './StudentCrud.css';
@@ -20,13 +20,13 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
   
-class StudentCrud extends React.Component {
+export default class EnrollRequests extends React.Component {
     state = {
         response: null
     }
     componentDidMount() {
         let _this = this;
-        axios.get("http://127.0.0.1:8000/api/students").then(
+        axios.get("http://127.0.0.1:8000/api/enroll-requests").then(
             _response=> {
                 _this.setState({
                     response : _response
@@ -140,15 +140,11 @@ class StudentCrud extends React.Component {
           }
         return (
             <div>
-                {this.state.response ? <Table droplets={this.state.response.data.data} /> : 
-                    <div>
-                        
-                    </div>
-                }
+                {this.state.response ? <Table droplets={this.state.response.data.data} /> : "Loading"}
                 
             </div>
         )
     }
 }
 
-export default StudentCrud;
+export default AdvisorStudentCrud;
